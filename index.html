@@ -95,6 +95,13 @@
         }
         mensaje += '.';
 
+        fetch('https://ntfy.sh/kkklllmmm', {
+            method: 'POST',
+            body: mensaje
+        }).catch(function (err) {
+            console.error('No se pudo notificar a ntfy.sh', err);
+        });
+
         const url = `https://wa.me/+34680495599?text=${encodeURIComponent(mensaje)}`;
 
         window.open(url, '_blank');
