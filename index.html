@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,12 +58,13 @@
         }
     </style>
 </head>
+
 <body>
     <h1>Hola </h1>
     <H2>esto es una página de reservas</H2>
 
     <form id="reservaForm">
-        <label for="nombre">Nombre
+        <label for="nombre">Nombre y apellidos
             <input type="text" id="nombre" placeholder="Tu nombre" required>
         </label>
         <label for="fecha">Día
@@ -81,24 +83,25 @@
     </form>
 
     <script>
-    document.getElementById('reservaForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const nombre = document.getElementById('nombre').value;
-        const fecha = document.getElementById('fecha').value;
-        const hora = document.getElementById('hora').value;
-        const adultos = document.getElementById('adultos').value;
-        const ninos = document.getElementById('ninos').value;
+        document.getElementById('reservaForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            const fecha = document.getElementById('fecha').value;
+            const hora = document.getElementById('hora').value;
+            const adultos = document.getElementById('adultos').value;
+            const ninos = document.getElementById('ninos').value;
 
-        let mensaje = `Hola, quiero hacer una reserva a nombre de ${nombre} para el día ${fecha} a las ${hora}. Somos ${adultos} adulto(s)`;
-        if (parseInt(ninos, 10) > 0) {
-            mensaje += ` y ${ninos} niño(s)`;
-        }
-        mensaje += '.';
+            let mensaje = `Hola, quiero hacer una reserva a nombre de ${nombre} para el día ${fecha} a las ${hora}. Somos ${adultos} adulto(s)`;
+            if (parseInt(ninos, 10) > 0) {
+                mensaje += ` y ${ninos} niño(s)`;
+            }
+            mensaje += '.';
 
-        const url = `https://wa.me/+34680495599?text=${encodeURIComponent(mensaje)}`;
+            const url = `https://wa.me/+34680495599?text=${encodeURIComponent(mensaje)}`;
 
-        window.open(url, '_blank');
-    });
+            window.open(url, '_blank');
+        });
     </script>
 </body>
+
 </html>
